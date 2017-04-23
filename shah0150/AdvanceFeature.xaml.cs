@@ -96,11 +96,15 @@ namespace shah0150
             MessageDialog dialog = new MessageDialog("Photo sucessfully uploaded!");
             Debug.WriteLine(blob);
             await dialog.ShowAsync();
+
+
+            
         }
 
         private void PictureButton_Click(object sender, RoutedEventArgs e)
         {
             addPhoto();
+            MessageDialog dialog = new MessageDialog("This is Advance feature in which the photo is uploaded to the Azure Blob Storage.");
         }
 
         #region Navigated to and from back button

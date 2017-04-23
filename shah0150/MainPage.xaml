@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
-               CompactPaneLength="50" OpenPaneLength="150">
+               CompactPaneLength="50" OpenPaneLength="250">
         <SplitView.Pane>
             <StackPanel Background="WhiteSmoke">
                 <Button 
@@ -24,7 +24,7 @@
                     
                     <Button x:Name="MenuButton1" 
                             FontFamily="Segoe MDL2 Assets" 
-                            Content="&#xE825;"
+                            Content="&#xE899;"
                             Width="50" 
                             Height="50" 
                             Background="Transparent"
@@ -40,7 +40,7 @@
                     
                     <Button x:Name="MenuButton2" 
                             FontFamily="Segoe MDL2 Assets" 
-                            Content="&#xE10F;"
+                            Content="&#xE8D6;"
                             Width="50" 
                             Height="50" 
                             Background="Transparent"
@@ -52,7 +52,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="MenuButton3" 
                             FontFamily="Segoe MDL2 Assets" 
-                            Content="&#xE1D6;"
+                            Content="&#xE8F7;"
                             Width="50" 
                             Height="50" 
                             Background="Transparent"
@@ -70,4 +70,10 @@
             </Grid>
         </SplitView.Content>
     </SplitView>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarToggleButton Icon="People" Label="About" Click="MenuButton1_Click"></AppBarToggleButton>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

@@ -11,6 +11,7 @@ using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Notifications;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -31,6 +32,8 @@ namespace shah0150
         public MainPage()
         {
             this.InitializeComponent();
+           
+
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)

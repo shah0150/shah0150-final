@@ -18,10 +18,10 @@
                        />
         </StackPanel>
 
-        <StackPanel Name="PickVideo" Margin="0,166,0,47" Grid.RowSpan="2">
-            <MediaElement x:Name="mediaElement" Height="400" Margin="180,0,179,0"/>
+        <StackPanel Name="PickVideo" Grid.RowSpan="2">
+            <MediaElement x:Name="mediaElement" Width="320" HorizontalAlignment="Center" />
 
         </StackPanel>
-        <Button x:Name="OpenVideo" Content="Open" Margin="10,171.333,0,10" Grid.Row="1" Click="OpenVideo_Click"/>
+        <Button x:Name="OpenVideo" Content="Open" HorizontalAlignment="Center" Grid.Row="1" Click="OpenVideo_Click"/>
     </Grid>
 </Page>

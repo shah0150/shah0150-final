@@ -25,12 +25,13 @@
             <TextBlock Foreground="White" FontSize="25" Text="Hi, I'm Adesh"/>
             <TextBlock Foreground="White" FontSize="25" Text="Techie"/>
             <TextBlock Foreground="White" FontSize="25" Text="And Fooodie"/>
+            <TextBlock Foreground="White" FontSize="25" Text="Version 1.0.0"/>
         </StackPanel>
         <Image Source="Assets/about-adesh.jpg" />
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal"
             HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Height="44" Width="73" Click="Button_Click">
-                <Image Source="Assets/email.png" Margin="-17.667,-6,11.667,-6" RenderTransformOrigin="-0.205,0.568" />
+            <Button Height="44" Width="73" Click="Button_Click" Background="Transparent" HorizontalAlignment="Center">
+                <Image Source="Assets/email.png" />
             </Button>
 
         </StackPanel>
