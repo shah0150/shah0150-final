@@ -15,6 +15,7 @@ using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
 using Windows.Storage;
 using Windows.Storage.Streams;
+using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -101,5 +102,41 @@ namespace shah0150
         {
             addPhoto();
         }
+
+        #region Navigated to and from back button
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+
+            currentView.BackRequested += backButton_Tapped;
+
+
+            base.OnNavigatedTo(e);
+        }
+
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        {
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
+
+            currentView.BackRequested -= backButton_Tapped;
+
+            base.OnNavigatingFrom(e);
+        }
+
+        private void backButton_Tapped(object sender, BackRequestedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+                e.Handled = true;
+            }
+            else
+            {
+                Debug.WriteLine("Can't go back");
+            }
+        }
+        #endregion
     }
 }

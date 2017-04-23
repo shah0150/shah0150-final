@@ -43,8 +43,9 @@
                             Content="&#xE10F;"
                             Width="50" 
                             Height="50" 
-                            Background="Transparent"/>
-                    <TextBlock Text="Button 2" 
+                            Background="Transparent"
+                            Click="MenuButton2_Click"/>
+                    <TextBlock Text="Media Element" 
                                FontSize="18" 
                                VerticalAlignment="Center" />
                 </StackPanel>

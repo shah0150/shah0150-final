@@ -50,6 +50,13 @@ namespace shah0150
             Frame.Navigate(typeof(AdvanceFeature));
         }
 
+        private void MenuButton2_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MediaElement));
+        }
+
+        // Toast Message Template 
+
         //private async void Button_Click(object sender, RoutedEventArgs e)
         //{
         //    // Frame.Navigate(typeof(AdvanceFeature));

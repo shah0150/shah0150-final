@@ -4,10 +4,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.ApplicationModel.Email;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.Storage.Pickers;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -24,26 +24,34 @@ namespace shah0150
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AboutMe : Page
+    public sealed partial class MediaElement : Page
     {
-        public AboutMe()
+        public MediaElement()
         {
             this.InitializeComponent();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void OpenVideo_Click(object sender, RoutedEventArgs e)
         {
-            //EmailMessage emailMessage = new EmailMessage();
-            //emailMessage.To.Add(new EmailRecipient("shah0150@algonquinlive.com"));
-            //string messageBody = "Awesome Work Adesh! Your Grade for this assignment is 100%";
-            //emailMessage.Body = messageBody;
-            //await EmailManager.ShowComposeNewEmailAsync(emailMessage);
+            FileOpenPicker openPicker = new FileOpenPicker();
 
+            openPicker.ViewMode = PickerViewMode.Thumbnail;
+            openPicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
 
-            Uri email = new Uri("mailto:shah0150@algonquinlive.com");
-            await Windows.System.Launcher.LaunchUriAsync(email);
+            openPicker.FileTypeFilter.Add(".mp4");
+            openPicker.FileTypeFilter.Add(".wmv");
+           
+            StorageFile file = await openPicker.PickSingleFileAsync();
+
+            if(file != null)
+            {
+                mediaElement.AreTransportControlsEnabled = true;
+
+                var stream = await file.OpenAsync(FileAccessMode.Read);
+
+                mediaElement.SetSource(stream, file.ContentType);
+            }
         }
-
         #region Navigated to and from back button
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {

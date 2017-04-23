@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <Border Background="#2f5cb6"/>
         <Border Grid.Column ="1" Background="#1f3d7a"/>
-        <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951" Margin="0,0.333,0,0"/>
         <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
             <TextBlock Foreground="White" FontSize="25" Text="Hi, I'm Adesh"/>
             <TextBlock Foreground="White" FontSize="25" Text="Techie"/>
@@ -29,7 +29,9 @@
         <Image Source="Assets/about-adesh.jpg" />
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal"
             HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Height="44" Width="139" Foreground="White" Content="Send Email" Click="Button_Click"/>
+            <Button Height="44" Width="73" Click="Button_Click">
+                <Image Source="Assets/email.png" Margin="-17.667,-6,11.667,-6" RenderTransformOrigin="-0.205,0.568" />
+            </Button>
 
         </StackPanel>
 
