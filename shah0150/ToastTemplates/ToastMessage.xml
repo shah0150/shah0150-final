@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<toast launch="app-defined-string">
+  <visual>
+    <binding template="ToastGeneric">
+      <text>Tony.....</text>
+      <text>Technology has made it easier for students to learn with devices, but nothing can come close to the experience of being taught by an inspirational teacher like you. Thank you.</text>
+    </binding>
+  </visual>
+  <actions>
+    <action activationType="foreground" content="Reviews" arguments="reviews" />
+    <action activationType="protocol" content="Show map" arguments="bingmaps:?q=sushi" />
+  </actions>
+</toast>
